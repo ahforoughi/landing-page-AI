@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [isFloating, setIsFloating] = useState(false);
   useEffect(() => setMounted(true), []);
 
   // Animated title switching
@@ -122,24 +123,37 @@ export default function Home() {
                   scale: 0.2,
                   rotate: 0,
                 }}
-                animate={{
+                animate={isFloating ? {
                   left: '38%',
                   top: '38%',
                   x: ['-50%', '-50%', '-50%', '-50%', '-50%'],
-                  y: ['-50%', '-50%', '-20%', '-80%', '-50%'],
-                  scale: [0.2, 1, 1, 1, 1],
+                  y: ['-50%', '-45%', '-40%', '-45%', '-50%'],
+                  scale: 1,
                   rotate: [0, 0, 10, -10, 0],
+                } : {
+                  left: '38%',
+                  top: '38%',
+                  x: '-50%',
+                  y: '-50%',
+                  scale: 1,
+                  rotate: 0,
                 }}
-                transition={{
+                transition={isFloating ? {
+                  x: { times: [0, 0.2, 0.4, 0.8, 1], duration: 4, ease: 'easeInOut', repeat: Infinity },
+                  y: { times: [0, 0.2, 0.4, 0.8, 1], duration: 4, ease: 'easeInOut', repeat: Infinity },
+                  scale: { duration: 0 },
+                  rotate: { times: [0, 0.2, 0.4, 0.8, 1], duration: 4, ease: 'easeInOut', repeat: Infinity },
+                } : {
                   left: { duration: 1.2, ease: 'easeInOut' },
                   top: { duration: 1.2, ease: 'easeInOut' },
-                  x: { times: [0, 0.2, 0.4, 0.8, 1], duration: 7.2, ease: 'easeInOut' },
-                  y: { times: [0, 0.2, 0.4, 0.8, 1], duration: 7.2, ease: 'easeInOut' },
-                  scale: { times: [0, 0.2, 0.4, 0.8, 1], duration: 7.2, ease: 'easeInOut' },
-                  rotate: { times: [0, 0.2, 0.4, 0.8, 1], duration: 7.2, ease: 'easeInOut', repeat: Infinity },
+                  x: { duration: 1.2, ease: 'easeInOut' },
+                  y: { duration: 1.2, ease: 'easeInOut' },
+                  scale: { duration: 1.2, ease: 'easeInOut' },
+                  rotate: { duration: 1.2, ease: 'easeInOut' },
                 }}
                 style={{ left: '38%', top: '38%' }}
                 className="absolute w-48 sm:w-72 h-48 sm:h-72 bg-gradient-to-tr from-purple-500 via-pink-400 to-blue-400 opacity-40 rounded-full blur-3xl z-0 pointer-events-none"
+                onAnimationComplete={() => setIsFloating(true)}
               />
               <motion.div
                 initial={{
@@ -150,21 +164,33 @@ export default function Home() {
                   scale: 0.2,
                   rotate: 0,
                 }}
-                animate={{
+                animate={isFloating ? {
                   right: '38%',
                   top: '38%',
-                  x: ['50%', '50%', '70%', '30%', '50%'],
-                  y: ['-50%', '-50%', '-80%', '-20%', '-50%'],
-                  scale: [0.2, 1, 1, 1, 1],
+                  x: ['50%', '50%', '50%', '50%', '50%'],
+                  y: ['-50%', '-45%', '-40%', '-45%', '-50%'],
+                  scale: 1,
                   rotate: [0, 0, -10, 10, 0],
+                } : {
+                  right: '38%',
+                  top: '38%',
+                  x: '50%',
+                  y: '-50%',
+                  scale: 1,
+                  rotate: 0,
                 }}
-                transition={{
+                transition={isFloating ? {
+                  x: { times: [0, 0.2, 0.4, 0.8, 1], duration: 4, ease: 'easeInOut', repeat: Infinity },
+                  y: { times: [0, 0.2, 0.4, 0.8, 1], duration: 4, ease: 'easeInOut', repeat: Infinity },
+                  scale: { duration: 0 },
+                  rotate: { times: [0, 0.2, 0.4, 0.8, 1], duration: 4, ease: 'easeInOut', repeat: Infinity },
+                } : {
                   right: { duration: 1.2, ease: 'easeInOut' },
                   top: { duration: 1.2, ease: 'easeInOut' },
-                  x: { times: [0, 0.2, 0.4, 0.8, 1], duration: 8.4, ease: 'easeInOut' },
-                  y: { times: [0, 0.2, 0.4, 0.8, 1], duration: 8.4, ease: 'easeInOut' },
-                  scale: { times: [0, 0.2, 0.4, 0.8, 1], duration: 8.4, ease: 'easeInOut' },
-                  rotate: { times: [0, 0.2, 0.4, 0.8, 1], duration: 8.4, ease: 'easeInOut', repeat: Infinity },
+                  x: { duration: 1.2, ease: 'easeInOut' },
+                  y: { duration: 1.2, ease: 'easeInOut' },
+                  scale: { duration: 1.2, ease: 'easeInOut' },
+                  rotate: { duration: 1.2, ease: 'easeInOut' },
                 }}
                 style={{ right: '38%', top: '38%' }}
                 className="absolute w-48 sm:w-72 h-48 sm:h-72 bg-gradient-to-tr from-blue-400 via-purple-500 to-pink-400 opacity-40 rounded-full blur-3xl z-0 pointer-events-none"
