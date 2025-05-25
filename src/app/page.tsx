@@ -34,7 +34,7 @@ export default function Home() {
       <nav className="w-full max-w-4xl mx-auto px-4 flex items-center py-6 relative">
         {/* Logo on the left */}
         <div className="flex items-center gap-2 min-w-[80px] z-10">
-          <span className="text-2xl font-bold tracking-tight">scale</span>
+          <span className="text-2xl font-bold tracking-tight">Vanna</span>
         </div>
 
         {/* Centered navigation menu (desktop only, absolutely centered) */}
