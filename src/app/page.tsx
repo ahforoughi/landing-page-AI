@@ -1,6 +1,7 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import "../styles/fonts.css";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -39,7 +40,7 @@ export default function Home() {
       <nav className="w-full max-w-4xl mx-auto px-4 flex items-center py-6 relative">
         {/* Logo on the left */}
         <div className="flex items-center gap-2 min-w-[80px] z-10">
-          <span className="text-2xl font-bold tracking-tight">Vanna</span>
+          <span className="text-2xl font-bold tracking-tight brand-title">Vanna</span>
         </div>
 
         {/* Centered navigation menu (desktop only, absolutely centered) */}
@@ -202,7 +203,7 @@ export default function Home() {
               />
             </>
           )}
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold leading-tight z-10 mb-4 px-2">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold leading-tight z-10 mb-4 px-2 brand-title">
             <span className="flex flex-row justify-center items-center flex-wrap gap-2">
               <span>Power</span>
               <span className="inline-block min-w-[10ch]">
@@ -242,7 +243,7 @@ export default function Home() {
         viewport={{ once: true, amount: 0.2 }}
       >
         <motion.div className="w-full max-w-7xl mx-auto px-4 text-center" variants={fadeInUp}>
-          <h2 className="text-3xl md:text-4xl font-bold mb-3">Our Products</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 brand-title">Our Products</h2>
           <p className="max-w-2xl text-base sm:text-lg text-gray-300 mb-8 mx-auto">
             Unlock the power of your data and AI with Vanna&apos;s suite of enterprise-ready solutions.
           </p>
@@ -274,7 +275,7 @@ export default function Home() {
         viewport={{ once: true, amount: 0.2 }}
       >
         <motion.div className="w-full max-w-7xl mx-auto px-4" variants={fadeInUp}>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-center">Key Features</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-center brand-title">Key Features</h2>
         </motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 w-full max-w-7xl mt-8 px-4">
           {[0,1,2].map(idx => (
@@ -298,7 +299,7 @@ export default function Home() {
                   <path d="M16 24l6 6 10-10" stroke="#fff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <h3 className="font-semibold text-xl mb-2">Secure Data Migration</h3>
+              <h3 className="font-semibold text-xl mb-2 brand-title">Secure Data Migration</h3>
               <p className="text-gray-400 text-center">Move your data from legacy systems to modern infrastructure with end-to-end encryption.</p>
             </motion.div>
           ))}
@@ -314,7 +315,7 @@ export default function Home() {
         viewport={{ once: true, amount: 0.2 }}
       >
         <motion.div className="mb-8" variants={fadeInUp}>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">How it Works</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-2 brand-title">How it Works</h2>
           <p className="text-lg text-gray-300">Automate your entire workflow so you get more, with less effort.</p>
         </motion.div>
         <div className="bg-[#18141c] rounded-2xl shadow-xl flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-gray-800 overflow-hidden">
@@ -328,7 +329,7 @@ export default function Home() {
               viewport={{ once: true, amount: 0.2 }}
             >
               <div className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-tr from-purple-500 via-pink-400 to-blue-400 text-white font-bold text-lg mb-4">1</div>
-              <h3 className="text-xl font-semibold text-white mb-2">Spot Denied Claims in Your Dashboard</h3>
+              <h3 className="text-xl font-semibold text-white mb-2 brand-title">Spot Denied Claims in Your Dashboard</h3>
               <p className="text-gray-400">Your dashboard shows every denied claim across your organization, with smart filters and recommendations prioritized by urgency and value.</p>
             </motion.div>
           ))}
@@ -377,7 +378,7 @@ export default function Home() {
       </div>
 
       <footer className="w-full bg-black text-gray-400 py-6 flex flex-col items-center border-t border-gray-800 mt-8">
-        <div className="text-lg font-bold text-white mb-1">Vanna</div>
+        <div className="text-lg font-bold text-white mb-1 brand-title">Vanna</div>
         <div className="text-sm">&copy; {new Date().getFullYear()} Vanna. All rights reserved.</div>
       </footer>
     </div>
