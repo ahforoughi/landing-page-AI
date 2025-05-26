@@ -16,7 +16,7 @@ export default function Home() {
       setPhraseIndex((prev) => (prev + 1) % phrases.length);
     }, 2000);
     return () => clearInterval(interval);
-  }, []);
+  }, [phrases.length]);
 
   // Smooth scroll helper
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
@@ -232,7 +232,7 @@ export default function Home() {
         <div className="w-full max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-3">Our Products</h2>
           <p className="max-w-2xl text-base sm:text-lg text-gray-300 mb-8 mx-auto">
-            Unlock the power of your data and AI with Vanna's suite of enterprise-ready solutions.
+            Unlock the power of your data and AI with Vanna&aposs suite of enterprise-ready solutions.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-7xl mt-4 px-4">
@@ -335,7 +335,7 @@ export default function Home() {
           <div className="flex-1 p-8 flex flex-col items-start">
             <div className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-tr from-blue-400 via-purple-500 to-pink-400 text-white font-bold text-lg mb-4">3</div>
             <h3 className="text-xl font-semibold text-white mb-2">Submit and Track Results</h3>
-            <p className="text-gray-400">Submit directly and monitor every step's progress. See what's working, and what's still pending—no more spreadsheets.</p>
+            <p className="text-gray-400">Submit directly and monitor every step&apos;s progress. See what&apos;s working, and what&apos;s still pending—no more spreadsheets.</p>
           </div>
         </div>
       </section>
