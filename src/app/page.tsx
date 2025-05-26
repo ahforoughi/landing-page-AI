@@ -9,12 +9,12 @@ export default function Home() {
   useEffect(() => setMounted(true), []);
 
   // Animated title switching
-  const phrases = ["Enterprise AI", "Generative AI"];
+  const phrases = ["Enterprise AI", "Generative AI", "AI-Ready Data"];
   const [phraseIndex, setPhraseIndex] = useState(0);
   useEffect(() => {
     const interval = setInterval(() => {
       setPhraseIndex((prev) => (prev + 1) % phrases.length);
-    }, 4000);
+    }, 2000);
     return () => clearInterval(interval);
   }, []);
 
@@ -228,63 +228,83 @@ export default function Home() {
       </section>
 
       {/* Product Section */}
-      <section id="product" className="py-16 sm:py-24 px-4 md:px-0 flex flex-col items-center bg-black">
-        <div className="w-full max-w-4xl mx-auto px-4">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-center">Your Data, Ready for AI</h2>
-          <p className="max-w-2xl text-base sm:text-lg text-gray-300 mb-10 text-center mx-auto">
-            Enterprises want the power of LLMs and generative AI — but their data isn&apos;t ready.<br className="hidden sm:block" />
-            We provide a privacy-focused data layer that helps businesses migrate from legacy systems, digitize their data, and securely prepare it for AI use.<br className="hidden sm:block" />
-            Whether you&apos;re adopting AI tools or building your own, we make sure your data is structured, compliant, and safe.
+      <section id="product" className="py-4 sm:py-6 px-4 md:px-0 flex flex-col items-center bg-black">
+        <div className="w-full max-w-7xl mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3">Our Products</h2>
+          <p className="max-w-2xl text-base sm:text-lg text-gray-300 mb-8 mx-auto">
+            Unlock the power of your data and AI with Vanna's suite of enterprise-ready solutions.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 w-full max-w-5xl mt-8 px-4">
-          <div className="bg-gray-900 rounded-2xl p-8 flex flex-col items-center shadow-lg border border-gray-800">
-            <div className="bg-gradient-to-tr from-purple-400 to-blue-400 p-3 rounded-full mb-4">
-              <svg width="32" height="32" fill="none" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
-            </div>
-            <h3 className="font-semibold text-xl mb-2">Privacy-First</h3>
-            <p className="text-gray-400 text-center">Your data is always protected and compliant with the latest privacy standards.</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-7xl mt-4 px-4">
+          <div className="bg-gray-900 rounded-2xl p-6 flex flex-col items-start shadow-lg border border-gray-800 hover:border-purple-500 transition">
+            <div className="text-xl font-semibold mb-2 text-white">Vanna Data Engine</div>
+            <div className="text-gray-400 text-sm">Prepare, structure, and label your data for the best AI results.</div>
           </div>
-          <div className="bg-gray-900 rounded-2xl p-8 flex flex-col items-center shadow-lg border border-gray-800">
-            <div className="bg-gradient-to-tr from-pink-400 to-purple-400 p-3 rounded-full mb-4">
-              <svg width="32" height="32" fill="none" viewBox="0 0 24 24"><path fill="currentColor" d="M12 4a8 8 0 100 16 8 8 0 000-16zm1 11h-2v-2h2v2zm0-4h-2V7h2v4z"/></svg>
-            </div>
-            <h3 className="font-semibold text-xl mb-2">Legacy to Digital</h3>
-            <p className="text-gray-400 text-center">We help you migrate from legacy systems and digitize your data for the future.</p>
+          <div className="bg-gray-900 rounded-2xl p-6 flex flex-col items-start shadow-lg border border-gray-800 hover:border-pink-500 transition">
+            <div className="text-xl font-semibold mb-2 text-white">Vanna GenAI Platform</div>
+            <div className="text-gray-400 text-sm">Build, fine-tune, and deploy generative AI models tailored to your business.</div>
           </div>
-          <div className="bg-gray-900 rounded-2xl p-8 flex flex-col items-center shadow-lg border border-gray-800">
-            <div className="bg-gradient-to-tr from-blue-400 to-pink-400 p-3 rounded-full mb-4">
-              <svg width="32" height="32" fill="none" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
-            </div>
-            <h3 className="font-semibold text-xl mb-2">AI-Ready Structure</h3>
-            <p className="text-gray-400 text-center">We structure and prepare your data for seamless integration with LLMs and GenAI tools.</p>
+          <div className="bg-gray-900 rounded-2xl p-6 flex flex-col items-start shadow-lg border border-gray-800 hover:border-blue-400 transition">
+            <div className="text-xl font-semibold mb-2 text-white">Vanna Donovan</div>
+            <div className="text-gray-400 text-sm">AI-powered decision-making and analytics for mission-critical operations.</div>
+          </div>
+          <div className="bg-gray-900 rounded-2xl p-6 flex flex-col items-start shadow-lg border border-gray-800 hover:border-cyan-400 transition">
+            <div className="text-xl font-semibold mb-2 text-white">Vanna Evaluation</div>
+            <div className="text-gray-400 text-sm">Evaluate and monitor your AI models for safety, compliance, and performance.</div>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-16 sm:py-24 px-4 md:px-0 flex flex-col items-center bg-black">
-        <div className="w-full max-w-4xl mx-auto px-4">
+      <section id="features" className="py-12 sm:py-16   px-4 md:px-0 flex flex-col items-center bg-black">
+        <div className="w-full max-w-7xl mx-auto px-4">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-center">Key Features</h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 w-full max-w-5xl mt-8 px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 w-full max-w-7xl mt-8 px-4">
           <div className="bg-gray-900 rounded-2xl p-8 flex flex-col items-center shadow-lg border border-gray-800">
-            <div className="bg-gradient-to-tr from-purple-400 to-blue-400 p-3 rounded-full mb-4">
-              <svg width="32" height="32" fill="none" viewBox="0 0 24 24"><path fill="currentColor" d="M17 9V7a5 5 0 00-10 0v2a5 5 0 00-2 4v5a2 2 0 002 2h10a2 2 0 002-2v-5a5 5 0 00-2-4zm-8-2a3 3 0 016 0v2H9V7zm8 11a1 1 0 01-1 1H8a1 1 0 01-1-1v-5a3 3 0 013-3h2a3 3 0 013 3v5z"/></svg>
+            <div className="mb-4">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                <circle cx="24" cy="24" r="22" fill="url(#feat1)" />
+                <defs>
+                  <linearGradient id="feat1" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#a855f7" />
+                    <stop offset="1" stop-color="#38bdf8" />
+                  </linearGradient>
+                </defs>
+                <path d="M16 24l6 6 10-10" stroke="#fff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
             </div>
             <h3 className="font-semibold text-xl mb-2">Secure Data Migration</h3>
             <p className="text-gray-400 text-center">Move your data from legacy systems to modern infrastructure with end-to-end encryption.</p>
           </div>
           <div className="bg-gray-900 rounded-2xl p-8 flex flex-col items-center shadow-lg border border-gray-800">
-            <div className="bg-gradient-to-tr from-pink-400 to-purple-400 p-3 rounded-full mb-4">
-              <svg width="32" height="32" fill="none" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+            <div className="mb-4">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                <rect x="8" y="8" width="32" height="32" rx="8" fill="url(#feat2)" />
+                <defs>
+                  <linearGradient id="feat2" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#ec4899" />
+                    <stop offset="1" stop-color="#a855f7" />
+                  </linearGradient>
+                </defs>
+                <path d="M16 24h16M24 16v16" stroke="#fff" strokeWidth="3" strokeLinecap="round"/>
+              </svg>
             </div>
             <h3 className="font-semibold text-xl mb-2">Compliance & Privacy</h3>
             <p className="text-gray-400 text-center">Stay compliant with GDPR, HIPAA, and other regulations while preparing your data for AI.</p>
           </div>
           <div className="bg-gray-900 rounded-2xl p-8 flex flex-col items-center shadow-lg border border-gray-800">
-            <div className="bg-gradient-to-tr from-blue-400 to-pink-400 p-3 rounded-full mb-4">
-              <svg width="32" height="32" fill="none" viewBox="0 0 24 24"><path fill="currentColor" d="M19 11H5a1 1 0 000 2h14a1 1 0 000-2z"/></svg>
+            <div className="mb-4">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                <ellipse cx="24" cy="24" rx="20" ry="12" fill="url(#feat3)" />
+                <defs>
+                  <linearGradient id="feat3" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#38bdf8" />
+                    <stop offset="1" stop-color="#ec4899" />
+                  </linearGradient>
+                </defs>
+                <path d="M16 28c2-4 14-4 16 0" stroke="#fff" strokeWidth="3" strokeLinecap="round"/>
+              </svg>
             </div>
             <h3 className="font-semibold text-xl mb-2">AI-Ready Formatting</h3>
             <p className="text-gray-400 text-center">We clean, structure, and format your data for optimal use with LLMs and generative AI tools.</p>
@@ -292,19 +312,79 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact Us Section */}
-      <section id="contact" className="py-16 sm:py-24 px-4 md:px-0 flex flex-col items-center bg-black">
-        <div className="w-full max-w-4xl mx-auto px-4">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-center">Contact Us</h2>
-          <p className="max-w-2xl text-base sm:text-lg text-gray-300 mb-8 text-center mx-auto">Ready to get started or have questions? Reach out to us using the form below or via email. Our team will get back to you within 24 hours.</p>
+      {/* How it Works Section */}
+      <section className="w-full max-w-7xl mx-auto px-4 py-12">
+        <div className="mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">How it Works</h2>
+          <p className="text-lg text-gray-300">Automate your entire workflow so you get more, with less effort.</p>
         </div>
-        <form className="w-full max-w-md flex flex-col gap-4 bg-gray-900 p-6 sm:p-8 rounded-2xl border border-gray-800 shadow-lg mx-4">
-          <input type="text" placeholder="Your Name" className="w-full px-4 py-2 rounded bg-gray-800 border border-gray-700 text-white focus:outline-none" />
-          <input type="email" placeholder="Your Email" className="w-full px-4 py-2 rounded bg-gray-800 border border-gray-700 text-white focus:outline-none" />
-          <textarea placeholder="Your Message" rows={4} className="w-full px-4 py-2 rounded bg-gray-800 border border-gray-700 text-white focus:outline-none" />
-          <button type="submit" className="w-full bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 text-white rounded-full px-6 py-3 font-semibold text-base hover:opacity-90 transition">Send Message</button>
-        </form>
+        <div className="bg-[#18141c] rounded-2xl shadow-xl flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-gray-800 overflow-hidden">
+          {/* Step 1 */}
+          <div className="flex-1 p-8 flex flex-col items-start">
+            <div className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-tr from-purple-500 via-pink-400 to-blue-400 text-white font-bold text-lg mb-4">1</div>
+            <h3 className="text-xl font-semibold text-white mb-2">Spot Denied Claims in Your Dashboard</h3>
+            <p className="text-gray-400">Your dashboard shows every denied claim across your organization, with smart filters and recommendations prioritized by urgency and value.</p>
+          </div>
+          {/* Step 2 */}
+          <div className="flex-1 p-8 flex flex-col items-start">
+            <div className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-tr from-pink-400 via-purple-500 to-blue-400 text-white font-bold text-lg mb-4">2</div>
+            <h3 className="text-xl font-semibold text-white mb-2">Generate Appeal Letters Automatically</h3>
+            <p className="text-gray-400">Pulls data from files and your system to generate precise, policy-specific letters automatically.</p>
+          </div>
+          {/* Step 3 */}
+          <div className="flex-1 p-8 flex flex-col items-start">
+            <div className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-tr from-blue-400 via-purple-500 to-pink-400 text-white font-bold text-lg mb-4">3</div>
+            <h3 className="text-xl font-semibold text-white mb-2">Submit and Track Results</h3>
+            <p className="text-gray-400">Submit directly and monitor every step's progress. See what's working, and what's still pending—no more spreadsheets.</p>
+          </div>
+        </div>
       </section>
+
+      {/* Feature Marquee Section */}
+      <div className="relative w-full overflow-x-hidden py-8 bg-black">
+        {/* Gradient overlays */}
+        <div className="marquee-fade marquee-fade-left" />
+        <div className="marquee-fade marquee-fade-right" />
+        {/* Row 1: left to right, seamless loop */}
+        <div className="animate-marquee flex gap-4 w-max mb-4">
+          {[
+            "Real-Time Metrics", "Policy-Aware Coding", "Team Workflows", "Smart Denial Triage",
+            "EHR Integration", "Revenue Insights", "Insurance Sync", "AI-Generated Appeals"
+          ].concat([
+            "Real-Time Metrics", "Policy-Aware Coding", "Team Workflows", "Smart Denial Triage",
+            "EHR Integration", "Revenue Insights", "Insurance Sync", "AI-Generated Appeals"
+          ]).map((feature, idx) => (
+            <div
+              key={idx}
+              className="px-6 py-3 rounded-full bg-gray-800 text-white font-semibold shadow text-base whitespace-nowrap"
+            >
+              {feature}
+            </div>
+          ))}
+        </div>
+        {/* Row 2: right to left, seamless loop */}
+        <div className="animate-marquee-reverse flex gap-4 w-max">
+          {[
+            "Smart Denial Triage", "Team Workflows", "Policy-Aware Coding", "Real-Time Metrics",
+            "AI-Generated Appeals", "Insurance Sync", "Revenue Insights", "EHR Integration"
+          ].concat([
+            "Smart Denial Triage", "Team Workflows", "Policy-Aware Coding", "Real-Time Metrics",
+            "AI-Generated Appeals", "Insurance Sync", "Revenue Insights", "EHR Integration"
+          ]).map((feature, idx) => (
+            <div
+              key={idx}
+              className="px-6 py-3 rounded-full bg-gray-800 text-white font-semibold shadow text-base whitespace-nowrap"
+            >
+              {feature}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <footer className="w-full bg-black text-gray-400 py-6 flex flex-col items-center border-t border-gray-800 mt-8">
+        <div className="text-lg font-bold text-white mb-1">Vanna</div>
+        <div className="text-sm">&copy; {new Date().getFullYear()} Vanna. All rights reserved.</div>
+      </footer>
     </div>
   );
 }
