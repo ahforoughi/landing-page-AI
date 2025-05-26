@@ -28,6 +28,11 @@ export default function Home() {
     setIsMenuOpen(false); // Also close mobile menu if open
   };
 
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } },
+  };
+
   return (
     <div className="min-h-screen bg-black text-white flex flex-col font-sans scroll-smooth">
       {/* Navigation Bar */}
@@ -228,117 +233,107 @@ export default function Home() {
       </section>
 
       {/* Product Section */}
-      <section id="product" className="py-4 sm:py-6 px-4 md:px-0 flex flex-col items-center bg-black">
-        <div className="w-full max-w-7xl mx-auto px-4 text-center">
+      <motion.section
+        id="product"
+        className="py-4 sm:py-6 px-4 md:px-0 flex flex-col items-center bg-black"
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <motion.div className="w-full max-w-7xl mx-auto px-4 text-center" variants={fadeInUp}>
           <h2 className="text-3xl md:text-4xl font-bold mb-3">Our Products</h2>
           <p className="max-w-2xl text-base sm:text-lg text-gray-300 mb-8 mx-auto">
-            Unlock the power of your data and AI with Vanna&aposs suite of enterprise-ready solutions.
+            Unlock the power of your data and AI with Vanna&apos;s suite of enterprise-ready solutions.
           </p>
-        </div>
+        </motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-7xl mt-4 px-4">
-          <div className="bg-gray-900 rounded-2xl p-6 flex flex-col items-start shadow-lg border border-gray-800 hover:border-purple-500 transition">
-            <div className="text-xl font-semibold mb-2 text-white">Vanna Data Engine</div>
-            <div className="text-gray-400 text-sm">Prepare, structure, and label your data for the best AI results.</div>
-          </div>
-          <div className="bg-gray-900 rounded-2xl p-6 flex flex-col items-start shadow-lg border border-gray-800 hover:border-pink-500 transition">
-            <div className="text-xl font-semibold mb-2 text-white">Vanna GenAI Platform</div>
-            <div className="text-gray-400 text-sm">Build, fine-tune, and deploy generative AI models tailored to your business.</div>
-          </div>
-          <div className="bg-gray-900 rounded-2xl p-6 flex flex-col items-start shadow-lg border border-gray-800 hover:border-blue-400 transition">
-            <div className="text-xl font-semibold mb-2 text-white">Vanna Donovan</div>
-            <div className="text-gray-400 text-sm">AI-powered decision-making and analytics for mission-critical operations.</div>
-          </div>
-          <div className="bg-gray-900 rounded-2xl p-6 flex flex-col items-start shadow-lg border border-gray-800 hover:border-cyan-400 transition">
-            <div className="text-xl font-semibold mb-2 text-white">Vanna Evaluation</div>
-            <div className="text-gray-400 text-sm">Evaluate and monitor your AI models for safety, compliance, and performance.</div>
-          </div>
+          {[0,1,2,3].map(idx => (
+            <motion.div
+              key={idx}
+              className="bg-gray-900 rounded-2xl p-6 flex flex-col items-start shadow-lg border border-gray-800 hover:border-purple-500 transition"
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              <div className="text-xl font-semibold mb-2 text-white">Vanna Data Engine</div>
+              <div className="text-gray-400 text-sm">Prepare, structure, and label your data for the best AI results.</div>
+            </motion.div>
+          ))}
         </div>
-      </section>
+      </motion.section>
 
       {/* Features Section */}
-      <section id="features" className="py-12 sm:py-16   px-4 md:px-0 flex flex-col items-center bg-black">
-        <div className="w-full max-w-7xl mx-auto px-4">
+      <motion.section
+        id="features"
+        className="py-12 sm:py-16   px-4 md:px-0 flex flex-col items-center bg-black"
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <motion.div className="w-full max-w-7xl mx-auto px-4" variants={fadeInUp}>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-center">Key Features</h2>
-        </div>
+        </motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 w-full max-w-7xl mt-8 px-4">
-          <div className="bg-gray-900 rounded-2xl p-8 flex flex-col items-center shadow-lg border border-gray-800">
-            <div className="mb-4">
-              <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                <circle cx="24" cy="24" r="22" fill="url(#feat1)" />
-                <defs>
-                  <linearGradient id="feat1" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#a855f7" />
-                    <stop offset="1" stop-color="#38bdf8" />
-                  </linearGradient>
-                </defs>
-                <path d="M16 24l6 6 10-10" stroke="#fff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
-            <h3 className="font-semibold text-xl mb-2">Secure Data Migration</h3>
-            <p className="text-gray-400 text-center">Move your data from legacy systems to modern infrastructure with end-to-end encryption.</p>
-          </div>
-          <div className="bg-gray-900 rounded-2xl p-8 flex flex-col items-center shadow-lg border border-gray-800">
-            <div className="mb-4">
-              <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                <rect x="8" y="8" width="32" height="32" rx="8" fill="url(#feat2)" />
-                <defs>
-                  <linearGradient id="feat2" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#ec4899" />
-                    <stop offset="1" stop-color="#a855f7" />
-                  </linearGradient>
-                </defs>
-                <path d="M16 24h16M24 16v16" stroke="#fff" strokeWidth="3" strokeLinecap="round"/>
-              </svg>
-            </div>
-            <h3 className="font-semibold text-xl mb-2">Compliance & Privacy</h3>
-            <p className="text-gray-400 text-center">Stay compliant with GDPR, HIPAA, and other regulations while preparing your data for AI.</p>
-          </div>
-          <div className="bg-gray-900 rounded-2xl p-8 flex flex-col items-center shadow-lg border border-gray-800">
-            <div className="mb-4">
-              <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                <ellipse cx="24" cy="24" rx="20" ry="12" fill="url(#feat3)" />
-                <defs>
-                  <linearGradient id="feat3" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#38bdf8" />
-                    <stop offset="1" stop-color="#ec4899" />
-                  </linearGradient>
-                </defs>
-                <path d="M16 28c2-4 14-4 16 0" stroke="#fff" strokeWidth="3" strokeLinecap="round"/>
-              </svg>
-            </div>
-            <h3 className="font-semibold text-xl mb-2">AI-Ready Formatting</h3>
-            <p className="text-gray-400 text-center">We clean, structure, and format your data for optimal use with LLMs and generative AI tools.</p>
-          </div>
+          {[0,1,2].map(idx => (
+            <motion.div
+              key={idx}
+              className="bg-gray-900 rounded-2xl p-8 flex flex-col items-center shadow-lg border border-gray-800"
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              <div className="mb-4">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                  <circle cx="24" cy="24" r="22" fill="url(#feat1)" />
+                  <defs>
+                    <linearGradient id="feat1" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                      <stop stopColor="#a855f7" />
+                      <stop offset="1" stopColor="#38bdf8" />
+                    </linearGradient>
+                  </defs>
+                  <path d="M16 24l6 6 10-10" stroke="#fff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+              <h3 className="font-semibold text-xl mb-2">Secure Data Migration</h3>
+              <p className="text-gray-400 text-center">Move your data from legacy systems to modern infrastructure with end-to-end encryption.</p>
+            </motion.div>
+          ))}
         </div>
-      </section>
+      </motion.section>
 
       {/* How it Works Section */}
-      <section className="w-full max-w-7xl mx-auto px-4 py-12">
-        <div className="mb-8">
+      <motion.section
+        className="w-full max-w-7xl mx-auto px-4 py-12"
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <motion.div className="mb-8" variants={fadeInUp}>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">How it Works</h2>
           <p className="text-lg text-gray-300">Automate your entire workflow so you get more, with less effort.</p>
-        </div>
+        </motion.div>
         <div className="bg-[#18141c] rounded-2xl shadow-xl flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-gray-800 overflow-hidden">
-          {/* Step 1 */}
-          <div className="flex-1 p-8 flex flex-col items-start">
-            <div className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-tr from-purple-500 via-pink-400 to-blue-400 text-white font-bold text-lg mb-4">1</div>
-            <h3 className="text-xl font-semibold text-white mb-2">Spot Denied Claims in Your Dashboard</h3>
-            <p className="text-gray-400">Your dashboard shows every denied claim across your organization, with smart filters and recommendations prioritized by urgency and value.</p>
-          </div>
-          {/* Step 2 */}
-          <div className="flex-1 p-8 flex flex-col items-start">
-            <div className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-tr from-pink-400 via-purple-500 to-blue-400 text-white font-bold text-lg mb-4">2</div>
-            <h3 className="text-xl font-semibold text-white mb-2">Generate Appeal Letters Automatically</h3>
-            <p className="text-gray-400">Pulls data from files and your system to generate precise, policy-specific letters automatically.</p>
-          </div>
-          {/* Step 3 */}
-          <div className="flex-1 p-8 flex flex-col items-start">
-            <div className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-tr from-blue-400 via-purple-500 to-pink-400 text-white font-bold text-lg mb-4">3</div>
-            <h3 className="text-xl font-semibold text-white mb-2">Submit and Track Results</h3>
-            <p className="text-gray-400">Submit directly and monitor every step&apos;s progress. See what&apos;s working, and what&apos;s still pending—no more spreadsheets.</p>
-          </div>
+          {[0,1,2].map(idx => (
+            <motion.div
+              key={idx}
+              className="flex-1 p-8 flex flex-col items-start"
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              <div className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-tr from-purple-500 via-pink-400 to-blue-400 text-white font-bold text-lg mb-4">1</div>
+              <h3 className="text-xl font-semibold text-white mb-2">Spot Denied Claims in Your Dashboard</h3>
+              <p className="text-gray-400">Your dashboard shows every denied claim across your organization, with smart filters and recommendations prioritized by urgency and value.</p>
+            </motion.div>
+          ))}
         </div>
-      </section>
+      </motion.section>
 
       {/* Feature Marquee Section */}
       <div className="relative w-full overflow-x-hidden py-8 bg-black">
