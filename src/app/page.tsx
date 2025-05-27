@@ -36,6 +36,42 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col scroll-smooth">
+      {/* Announcement Banner */}
+      <AnimatePresence>
+        <motion.div 
+          initial={{ height: 0, opacity: 0 }}
+          animate={{ height: "auto", opacity: 1 }}
+          transition={{ 
+            duration: 0.5,
+            ease: "easeOut"
+          }}
+          className="w-full bg-gradient-to-r from-purple-500 via-blue-400 to-pink-400 overflow-hidden"
+        >
+          <motion.div 
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ 
+              delay: 0.2,
+              duration: 0.5,
+              ease: "easeOut"
+            }}
+            className="max-w-4xl mx-auto px-4 py-2 flex items-center justify-center"
+          >
+            <p className="text-sm font-medium text-white">
+              🎉 Announcing Agrivanna - AI-powered solutions for farmers and veterinarians. 
+              <a 
+                href="https://agrivanna.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="ml-2 underline hover:text-gray-100 transition-colors"
+              >
+                Learn more →
+              </a>
+            </p>
+          </motion.div>
+        </motion.div>
+      </AnimatePresence>
+
       {/* Navigation Bar */}
       <nav className="w-full max-w-4xl mx-auto px-4 flex items-center py-6 relative">
         {/* Logo on the left */}
