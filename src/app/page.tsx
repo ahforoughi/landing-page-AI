@@ -305,7 +305,7 @@ export default function Home() {
       >
         <motion.div className="mb-8" variants={fadeInUp}>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-2 brand-title text-center">Key Features</h2>
-          <p className="text-lg text-gray-300 text-center">Unlock the power of your data and AI with Vanna's suite of enterprise-ready solutions.</p>
+          <p className="text-lg text-gray-300 text-center">Unlock the power of your data and AI with Vanna&apos;s suite of enterprise-ready solutions.</p>
         </motion.div>
         <div className="bg-[#18141c] rounded-2xl shadow-xl flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-gray-800 overflow-hidden text-left">
           <motion.div
@@ -350,7 +350,7 @@ export default function Home() {
           >
             <div className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-tr from-purple-500 via-pink-400 to-blue-400 text-white font-bold text-lg mb-4">4</div>
             <h3 className="text-xl font-semibold text-white mb-2 brand-title">AI Readiness Toolkit</h3>
-            <p className="text-gray-400 text-left">Assess, validate, and optimize your data to ensure it's ready for LLMs and GenAI.</p>
+            <p className="text-gray-400 text-left">Assess, validate, and optimize your data to ensure it&apos;s ready for LLMs and GenAI.</p>
           </motion.div>
         </div>
       </motion.section>
