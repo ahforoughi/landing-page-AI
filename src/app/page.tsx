@@ -48,7 +48,7 @@ export default function Home() {
           <ul className="flex gap-8 text-sm font-medium">
             <li><a href="#product" onClick={e => handleSmoothScroll(e, 'product')} className="hover:underline">Product</a></li>
             <li><a href="#features" onClick={e => handleSmoothScroll(e, 'features')} className="hover:underline">Features</a></li>
-            <li><a href="#contact" onClick={e => handleSmoothScroll(e, 'contact')} className="hover:underline">Contact Us</a></li>
+            <li><a href="https://form.typeform.com/to/P3lo12vT" target="_blank" rel="noopener noreferrer" className="hover:underline">Contact Us</a></li>
           </ul>
         </div>
 
@@ -112,7 +112,7 @@ export default function Home() {
                 <ul className="flex flex-col items-center gap-8 text-lg font-medium">
                   <li><a href="#product" onClick={e => handleSmoothScroll(e, 'product')} className="hover:underline">Product</a></li>
                   <li><a href="#features" onClick={e => handleSmoothScroll(e, 'features')} className="hover:underline">Features</a></li>
-                  <li><a href="#contact" onClick={e => handleSmoothScroll(e, 'contact')} className="hover:underline">Contact Us</a></li>
+                  <li><a href="https://form.typeform.com/to/P3lo12vT" target="_blank" rel="noopener noreferrer" className="hover:underline">Contact Us</a></li>
                 </ul>
                 <a
                   href="https://calendly.com/ah-foroughi98/meeting-with-vanna-team"
